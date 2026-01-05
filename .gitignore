@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Spark/Hadoop
+hadoop/
+*.log
+
+# Data
+data/events/*.csv
+!data/events/.gitkeep
+
+# IDE
+.vscode/
+.idea/
