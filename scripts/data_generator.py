@@ -6,23 +6,24 @@ from datetime import datetime
 import os
 
 # Configuration
-DATA_DIR = "../data/events"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "../data/events")
 EVENTS_PER_BATCH = 10
 INTERVAL_SECONDS = 5
 
 # Ensure data directory exists
 os.makedirs(DATA_DIR, exist_ok=True)
 
-EVENT_TYPES = ["view", "click", "purchase", "cart_add"]
+EVENT_TYPES = ["view", "purchase"]
 
 def generate_event():
     return {
         "event_id": str(uuid.uuid4()),
         "event_type": random.choice(EVENT_TYPES),
         "user_id": f"user_{random.randint(1, 100)}",
-        "item_id": f"item_{random.randint(1, 50)}",
+        "product_id": f"product_{random.randint(1, 50)}",
         "price": round(random.uniform(10.0, 500.0), 2),
-        "timestamp": datetime.now().isoformat()
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     }
 
 def main():

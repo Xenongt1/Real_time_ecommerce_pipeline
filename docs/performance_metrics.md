@@ -1,15 +1,22 @@
 # Performance Metrics
 
-## Key Indicators
-1. **Throughput**: Events processed per second (EPS).
-2. **Latency**: Time diff between `timestamp` (event generation) and `processed_at` (db insertion).
-3. **Batch Duration**: Time taken for Spark to process a micro-batch.
+## Observed Performance
+Based on local execution logs:
+
+1.  **Throughput**:
+    -   **Batch Size**: ~1920 records per batch (observed in logs).
+    -   **Processing Time**: Batches processed typically within 1-2 seconds.
+
+2.  **Latency**:
+    -   Time from "Batch Processed" to "Batch Written to PostgreSQL" is sub-second for small batches.
 
 ## Resource Usage
-- **CPU**: Spark executor and driver CPU usage.
-- **Memory**: Heap usage for Spark executors.
-- **Disk I/O**: Write speed to PostgreSQL.
+-   **Spark Driver**: Single-node local mode (`local[*]`).
+-   **Memory**: Standard PySpark overhead (Java VM).
+-   **Disk I/O**:
+    -   Reads: CSV inputs from `data/events`.
+    -   Writes: JDBC inserts to localhost PostgreSQL.
 
-## Benchmarking
-- Start with 10 events/batch (5s interval).
-- Scale up to 100, 1000 events/batch to observe latency spikes.
+## Benchmarking Goals
+-   Current: 10 events/batch (Generator setting).
+-   Stress Test: Can scale `EVENTS_PER_BATCH` in `data_generator.py` to 1000+ to test Postgres insertion limits.
