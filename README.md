@@ -27,7 +27,7 @@ graph LR
 - **Language**: Python
 - **Engine**: Apache Spark (PySpark)
 - **Database**: PostgreSQL
-- **Libraries**: `pandas`, `faker`, `python-dotenv`, `psycopg2-binary`
+- **Libraries**: `pandas`, `python-dotenv`, `psycopg2-binary`
 
 ## Getting Started
 

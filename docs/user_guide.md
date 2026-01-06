@@ -9,7 +9,7 @@
 ## Setup
 1. **Install Python Dependencies**:
    ```bash
-   pip install pandas pyspark faker psycopg2-binary python-dotenv
+   pip install pandas pyspark psycopg2-binary python-dotenv
    ```
    *Note: The PostgreSQL JDBC driver is automatically handled by Spark (`org.postgresql:postgresql:42.6.0`).*
 
