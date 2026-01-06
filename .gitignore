@@ -16,6 +16,4 @@ data/events/*.csv
 .vscode/
 .idea/
 
-# ENV
-.env
 
