@@ -1,4 +1,4 @@
-# Real-Time E-commerce Data Pipeline 🚀
+# Real-Time E-commerce Data Pipeline 
 
 A robust, real-time data ingestion pipeline that simulates e-commerce user events, processes them using **Apache Spark Structured Streaming**, and persists the data into a **PostgreSQL** database for analysis.
 
@@ -6,7 +6,7 @@ A robust, real-time data ingestion pipeline that simulates e-commerce user event
 ![Spark](https://img.shields.io/badge/Apache%20Spark-Structured%20Streaming-orange)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-12%2B-336791)
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 graph LR
@@ -16,20 +16,20 @@ graph LR
     D -->|JDBC Write| E[(PostgreSQL)]
 ```
 
-## ✨ Features
+## Features
 - **Synthetic Data Generation**: Python script (`data_generator.py`) creates realistic e-commerce events (views, cart adds, purchases) with absolute path resolution.
 - **Real-Time Processing**: Spark job (`spark_streaming_to_postgres.py`) continuously monitors for new data.
 - **Automatic Schema Mapping**: Automatically handles schema differences (renames `item_id` → `product_id`).
 - **Secure Configuration**: Uses `.env` for database credentials.
 - **Robust Logging**: Logs both to console and file (`logs/pipeline.log`).
 
-## 🛠️ Technologies
+## Technologies
 - **Language**: Python
 - **Engine**: Apache Spark (PySpark)
 - **Database**: PostgreSQL
 - **Libraries**: `pandas`, `faker`, `python-dotenv`, `psycopg2-binary`
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Python 3.8+
@@ -72,7 +72,7 @@ python scripts/spark_streaming_to_postgres.py
 
 Watch the logs to see batches being processed and written to the database!
 
-## 📂 Project Structure
+## Project Structure
 ```
 ├── data/               # Generated event data
 ├── docs/               # Detailed documentation
