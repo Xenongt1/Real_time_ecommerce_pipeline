@@ -2,6 +2,6 @@ Host: localhost
 Port: 5432
 Database: ecommerce_db
 User: postgres
-Password: password
+Password: Ayo05mide*
 Driver: org.postgresql.Driver
 URL: jdbc:postgresql://localhost:5432/ecommerce_db
